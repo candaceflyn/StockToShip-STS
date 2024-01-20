@@ -1,0 +1,46 @@
+FLOW OF APPLICATION- STOCK TO SHIP
+ 
+When the application is started, we are redirected to login page.
+localhost:4200 ---> localhost:4200/login
+ 
+Here, user needs to enter the credentials those which once he/she has signed up in past.
+when any of the two is invalid user will be prompted with error message.
+With valid credentials, user can navigate to home page.
+For validating credentials, we have a method in userService in angular, "validateCredentials(username, password)"
+from here request will go to UserController, there a response will be sent in boolean type, 
+and accordingly the message will be shown.
+ 
+ 
+if user has forgot the password, he navigate the link given on the login page,
+then he'll be navigated to a verification page, there user needs to enter linked username and email.
+User can't update password is the username and email doesn't match.
+On successful verification, user can update password.
+And then user needs to login with the new credentials,
+ 
+If user haven't created any account yet, then he can sign up,
+for that he needs to enter a unique username which doesn't exists in database, 
+and on filling all required fields with validations, an account will be created and he will be navigated to home page.
+ 
+On routing to "Home", user can see 3 options as
+WareYouGo
+Car O Drive
+Stock Vault
+ 
+On ware you go, user moves to inbound and outbound management of products
+here user can submit an inbound requisition form, with all required validations, 
+also he can view all products already added.
+then he see all location details in the location analyzer page and he can add or update locations using the forms given below.
+ 
+similarly he can submit outbound requisition form and view shipping status.
+ 
+next on the home page we have "car-o-drive", which further navigates to quality control check page, where user can submit the forms like
+stamping, blanking, welding, painting, assembling
+ 
+then comes stock vault page on home page
+here user can create a new Item type in "Item Code"
+ 
+next user can generate bom, by filling in valid details, and it will be send for approval.
+ 
+on home page, we have a routing to "Orders" page, here user can check all the purchse orders
+and in "About us" section, user can go through our terms and conditions
+and view "Contact Us" card.
